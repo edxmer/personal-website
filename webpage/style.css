@@ -1,0 +1,36 @@
+/* Betűtípus definiálása és importálása */
+@font-face {
+    font-family: 'LibertinusMono';
+    src: url('fonts/LibertinusMono-Regular.ttf');
+}
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('fonts/RobotoMono-Regular.ttf');
+}
+
+body {
+    font-family: 'RobotoMono', monospace;   
+}
+
+h1 {
+    font-family: LibertinusMono;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.container {
+    /* Center contents */
+
+    
+    padding: 1em;
+    
+
+    border: 2px solid black;
+    border-radius: 1em;
+
+
+}
