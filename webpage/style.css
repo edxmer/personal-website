@@ -1,4 +1,4 @@
-/* Betűtípus definiálása és importálása */
+/**** Font import and definitions ****/
 @font-face {
     font-family: 'LibertinusMono';
     src: url('fonts/LibertinusMono-Regular.ttf');
@@ -8,29 +8,142 @@
     src: url('fonts/RobotoMono-Regular.ttf');
 }
 
+
+/**** Color variable declaratio ****/
+:root, [color-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --primary-color: #6200ea;
+  --card-bg: #f8f9fa;
+}
+
+[color-theme="dark"] {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --primary-color: #6200ea;
+  --card-bg: #f8f9fa;
+}
+
+
+/**** Basic settings ****/
 body {
-    font-family: 'RobotoMono', monospace;   
+    font-family: 'RobotoMono', monospace;
+       
 }
 
-h1 {
+h1, h2, h3 {
     font-family: LibertinusMono;
+    margin: 0;
 }
 
+section:first-child {
+    margin-top: 0rem;
+}
+
+h3 {
+    margin-bottom: 100rem;
+}
+
+
+p {
+    font-family: 'RobotoMono', sans-serif;
+    margin: 0;
+    margin-bottom: 0.75rem;
+}
+
+
+/**** Centerings ****/
 .centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
 }
 
-div.container {
-    /* Center contents */
+.centered-vertically {
+  display: flex;
+  align-items: center;
+}
 
-    
+/**** Jump to content ****/
+a#jump-to-content {
+    position: absolute;
+    top: 10px;
+    left: -200px;
+}
+a#jump-to-content:focus {
+    size:10px;
+    left: 10px;
+}
+
+
+/**** div.container ****/
+.container {
     padding: 1em;
-    
-
     border: 2px solid black;
     border-radius: 1em;
+    width: 50rem;
+}
 
 
+/**** .button-choice ****/
+.button-choice {
+    border: 2px solid black;
+    border-radius: 0.75rem;
+    overflow: hidden;
+
+    box-sizing: border-box;
+    height: 1.5rem;
+    margin: 0
+}
+.button-choice button {
+    background-color: #00000000;
+    border: none;
+    border-right: 1px solid black;
+    padding: 0;
+    height: 100%;
+    width: 10em;
+}
+.button-choice button:last-child {
+    border: none;
+}
+.button-choice button:hover {
+    background-color: #00000022;
+    cursor: pointer;
+}
+.button-choice button.active {
+    background-color: #cccccc;
+}
+.button-choice button.active:hover {
+    background-color: #00000044;
+    cursor: pointer;
+}
+
+
+/**** theme-mode-selector ****/
+#theme-mode-selector {
+    margin-left: 0.75rem;
+    width: 10em;
+}
+
+
+/**** button#search-button ****/
+button#search-button {
+    background-color: #00000000;
+    margin: 0;
+    margin-right: 0.75rem;
+
+    box-sizing: border-box;
+    overflow: hidden;
+    
+    padding: 0;
+    padding-left: 0.5em;
+    border: 2px solid black;
+    border-radius: 0.75rem;
+
+    height: 1.5rem;
+    width: 10em;
+    
+}
+button#search-button:hover {
+    background-color: #cccccc;
+    cursor: pointer;
 }
