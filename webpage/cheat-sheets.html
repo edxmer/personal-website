@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>~/cheat-sheets Edömér's Archive</title>
+    <link rel="icon" type="image/x-icon" href="media/favicon.ico" />
+</head>
+
+<body class="centered">
+
+    <!-- Jump to content -->
+    <a id="jump-to-content" href="#content">Jump to content</a>
+
+    <!-- Search -->
+    <dialog id="search-modal">
+        <input type="text" id="search-input" placeholder="Search the archive..." autocomplete="off" />
+        <ul id="search-results"></ul>
+    </dialog>
+
+    <!-- Floating back to top button -->
+    <button id="back-to-top" onclick="window.location.href='#'">Back to top</button>
+
+    <!-- Header -->
+    <header class="container centered">
+        <h1>Edömér's Archive</h1>
+        <p id="path">~/cheat-sheets</p>
+        <div id="navbar">
+            <button id="search-button" class="centered-vertically" onclick="openSearch()">
+                
+                <!-- Search icon -->
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round" data-darkreader-inline-stroke="" 
+                    style="--darkreader-inline-stroke: currentColor;"><circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+
+                <span id="search-shortcut-text"></span>
+                
+            </button>
+    
+            <nav id="pages" class="button-choice centered-vertically">
+                <button onclick="window.location.href = 'index.html'">Main</button>
+                <button onclick="window.location.href='projects.html'">Projects</button>
+                <button class="active">Cheat sheets</button>
+                <button onclick="window.location.href='resources.html'">Resources</button>
+            </nav>
+    
+            <div id="theme-mode-selector" class="button-choice centered-vertically">
+                <button id="light-mode-button" class="active" onclick="switchToLightMode()">light</button>
+                <button id="dark-mode-button" onclick="switchToDarkMode()">dark</button>
+            </div>
+    
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <article class="container" id="content">
+        <nav class="button-choice centered-vertically">
+            <button onclick="window.location.href='#terminal'">terminal</button>
+            <button onclick="window.location.href='#vim'">vim</button>
+            <button onclick="window.location.href='#vscode'">vscode</button>
+            <button onclick="window.location.href='#maths'">maths</button>
+        </nav><br/>
+
+        <section id="terminal">
+            <h2># Unix terminal shortcuts</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Shortcut</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><code>ctrl+c</code></th>
+                  <td>kill current foreground process</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>ctrl+z</code></th>
+                  <td>suspend current foreground process</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>ctrl+l</code></th>
+                  <td>clears screen</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>ctrl+a</code></th>
+                  <td>move cursor to beginning of line</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>ctrl+e</code></th>
+                  <td>move cursor to end of line</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>ctrl+u</code></th>
+                  <td>erase line</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>ctrl+k</code></th>
+                  <td>erase part of line after cursor</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>ctrl+w</code></th>
+                  <td>erase word before cursor</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>ctrl+y</code></th>
+                  <td>paste previusly erased text</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>ctrl+r</code></th>
+                  <td>search for command in history</td>
+                </tr>
+              </tbody>
+            </table>
+        </section>
+
+        <section id="vim">
+            <h2># Vim cheat sheet</h2>
+
+            <br/><nav class="button-choice centered-vertically">
+                <button onclick="window.location.href='#vim-commands'">commands</button>
+                <button onclick="window.location.href='#vim-keybinds'">keybinds</button>
+            </nav><br/>
+
+            <section id="vim-commands">
+                <h3>## Commands</h3>
+                
+                <aside>
+                    Tip: The longer vim commands can be shortened by only writing
+                    the part where if you were to press tab, the autocomplete would
+                    only find a single command. Then it will run that command. <br/>
+                    For example: <code>:Explore</code> -> <code>:Ex</code>
+                </aside>
+    
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Command</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"><code>:q</code></th>
+                      <td>exit</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><code>:q!</code></th>
+                      <td>force exit</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><code>:w (optional:filename)</code></th>
+                      <td>write (save)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><code>:wq</code></th>
+                      <td>write and quit</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><code>:Explore</code></th>
+                      <td>open vim file explorer</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><code>:(n)</code></th>
+                      <td>jump to nth line</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><code>:m+(n) / m-(n)</code></th>
+                      <td>move current line (or selected lines) to above the relative +nth or -nth line</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </section>
+
+            <section id="vim-keybinds">
+                <h3>## Keybinds</h3>
+    
+                <br/><nav class="button-choice centered-vertically" id="vim-keybinds-nav">
+                    <button onclick="window.location.href='#vim-insert-mode'">insert</button>
+                    <button onclick="window.location.href='#vim-visual-selection-mode'">selection</button>
+                    <button onclick="window.location.href='#vim-clipboard'">clipboard</button>
+                    <button onclick="window.location.href='#vim-navigation'">navigation</button>
+                    <button onclick="window.location.href='#vim-search-and-replace'">search</button>
+                    <button onclick="window.location.href='#vim-undo-redo-repeat'">undo</button>
+                </nav><br/>
+                
+                <aside>
+                    Tip: by typing a number before a command, vim will repeat the command the typed number of times. <br/>
+                    For example: <code>dd</code>: delete line; <code>3dd</code> delete 3 lines
+                </aside>
+
+                <section id="vim-insert-mode">
+                    <h4>### Insert mode</h4>
+                    
+                    <table>
+                    <thead>
+                        <tr>
+                        <th scope="col">Keybind</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row"><code>i</code></th>
+                        <td>enter insert mode before cursor</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>a</code></th>
+                        <td>enter insert mode on cursor</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>I</code></th>
+                        <td>enter insert mode at the beginning of line</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>A</code></th>
+                        <td>enter insert mode at the end of line</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>o</code></th>
+                        <td>create line below, and enter insert mode there</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>O</code></th>
+                        <td>create line above, and enter insert mode there</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </section>
+
+                <section id="vim-visual-selection-mode">
+                    <h4 >### Visual selection mode</h4>
+        
+                    <aside>
+                        Tip: if you type a command or keybind in visual mode, 
+                        it will usually apply to the selection.
+                    </aside>
+        
+                    <table>
+                    <thead>
+                        <tr>
+                        <th scope="col">Keybind</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row"><code>v</code></th>
+                        <td>enter visual mode</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>V</code></th>
+                        <td>enter visual line mode</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>&gt;</code></th>
+                        <td>shift selected text to right (by a tab)</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>&lt;</code></th>
+                        <td>shift selected text to left (by a tab)</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>&gt;&gt;</code></th>
+                        <td>shift current line to right (by a tab)</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>&lt;&lt;</code></th>
+                        <td>shift current line to right (by a tab)</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </section>
+
+                <section id="vim-clipboard">
+                    <h4>### Clipboard</h4>
+        
+                    <aside>
+                        Tip: registers are basically storages. 
+                        You can specify which register you want to run a command on, 
+                        like <code>"ayy</code> to copy the current line into register <code>a</code>. 
+                        You can then paste it by running <code>"ap</code>. 
+                        There are also special registers like <code>0</code> for your last yank, 
+                        and <code>+</code> or <code>*</code> for system clipboard. 
+                        There is also the <code>_</code> black hole register, which is similar to /dev/null
+                    </aside>
+        
+                    <table>
+                    <thead>
+                        <tr>
+                        <th scope="col">Keybind</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row"><code>yy</code></th>
+                        <td>yank (copy) line (to register 0)</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>y</code></th>
+                        <td>yank selection (in visual mode)</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>p</code></th>
+                        <td>paste after cursor</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>P</code></th>
+                        <td>paste before cursor</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>dd</code></th>
+                        <td>delete (cut) line</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>d</code></th>
+                        <td>delete (cut) selection (in visual mode)</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>x</code></th>
+                        <td>delete (cut) character under cursor</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>cc</code></th>
+                        <td>change (delete line and enter insert mode)</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>c</code></th>
+                        <td>change (delete selection and enter insert mode)</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </section>
+    
+                <section id="vim-navigation">
+                    <h4>### Navigation</h4>
+        
+                    <aside>
+                        Tip: You can also combine numbers with movement keys. 
+                        For example, <code>5j</code> will move the cursor down 5 lines, and <code>3w</code> will jump forward 3 words.
+                    </aside>
+                    
+                    <table>
+                    <thead>
+                        <tr>
+                        <th scope="col">Keybind</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row"><code>h / j / k / l</code></th>
+                        <td>move left / down / up / right</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>arrow keys</code></th>
+                        <td>move left / down / up / right</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>w</code></th>
+                        <td>move forward to start of next word</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>b</code></th>
+                        <td>move backward to start of previous word</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>e</code></th>
+                        <td>move forward to end of word</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>0</code></th>
+                        <td>move to absolute beginning of line</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>^</code></th>
+                        <td>move to first non-blank character of line</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>$</code></th>
+                        <td>move to absolute end of line</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>gg</code></th>
+                        <td>jump to first line of document</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>G</code></th>
+                        <td>jump to last line of document</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>Ctrl + u</code></th>
+                        <td>move half a screen up</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>Ctrl + d</code></th>
+                        <td>move half a screen down</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </section>
+
+                <section id="vim-search-and-replace">
+                    <h4>### Search and replace</h4>
+        
+                    <aside>
+                        Tip: You can clear the highlighting of your last search by typing <code>:noh</code>
+                    </aside>
+        
+                    <table>
+                    <thead>
+                        <tr>
+                        <th scope="col">Keybind / Command</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row"><code>/pattern</code></th>
+                        <td>search forward for 'pattern'</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>?pattern</code></th>
+                        <td>search backward for 'pattern'</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>n</code></th>
+                        <td>repeat search in same direction</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>N</code></th>
+                        <td>repeat search in opposite direction</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>*</code></th>
+                        <td>search forward for the exact word under cursor</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>#</code></th>
+                        <td>search backward for the exact word under cursor</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>:%s/old/new/g</code></th>
+                        <td>replace all occurrences of 'old' with 'new' throughout the file.</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>:%s/old/new/gc</code></th>
+                        <td>replace with confirmation prompts for each match (<code>y</code> to accept, <code>n</code> to skip)</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </section>
+
+                <section id="vim-undo-redo-repeat">
+                    <h4>### Undo, redo and repeat</h4>
+        
+                    <table>
+                    <thead>
+                        <tr>
+                        <th scope="col">Keybind</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row"><code>u</code></th>
+                        <td>undo last action</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>Ctrl + r</code></th>
+                        <td>redo last undone action</td>
+                        </tr>
+                        <tr>
+                        <th scope="row"><code>.</code></th>
+                        <td>repeat last change</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </section>
+                
+            </section>
+        </section>
+
+        <section id="vscode">
+            <h2># Visual Studio Code</h2>
+
+            <br/><nav class="button-choice centered-vertically" id="vim-keybinds-nav">
+                <button onclick="window.location.href='#vscode-general'">general</button>
+                <button onclick="window.location.href='#vscode-basic-editing'">editing</button>
+                <button onclick="window.location.href='#vscode-multi-cursor'">cursor</button>
+                <button onclick="window.location.href='#vscode-navigation'">navigation</button>
+                <button onclick="window.location.href='#vscode-search'">search</button>
+                <button onclick="window.location.href='#vscode-window-management'">window</button>
+            </nav><br/>
+            
+            <section id="vscode-general">
+              <h3>## General</h3>
+              
+              <aside>
+                Tip: The command palette can be used to search for any action, 
+                if you forget a shortcut, and it will also display the shortcut.<br/>
+                For example: <code>Format Document</code> -&gt; searches for the
+                formatting command and shows its keybind.
+              </aside><br/><br/>
+
+              <aside>
+                  Note: the shortcuts here are for macos, but they should be very similar for linux and windows too,
+                  just use ctrl instead of command(⌘), and use alt instead of option(⌥)
+              </aside>
+
+              
+            
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Keybind</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>⌘⇧P</code> / <code>F1</code></th>
+                    <td>open command palette</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘P</code></th>
+                    <td>quick open (go to file)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘⇧N</code></th>
+                    <td>open new window/instance</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘W</code></th>
+                    <td>close active window/tab</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘,</code></th>
+                    <td>open user settings</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            
+            <section id="vscode-basic-editing">
+              <h3>## Basic editing</h3>
+              <aside>
+                  Tip: If you press copy or cut without having any text selected, 
+                  VS Code will automatically copy or cut the entire current line.
+              </aside>
+            
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Keybind</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>⌘X</code></th>
+                    <td>cut</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘C</code></th>
+                    <td>copy</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌥Up</code> / <code>⌥Down</code></th>
+                    <td>move line up / down</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⇧⌥Up</code> / <code>Down</code></th>
+                    <td>copy line up / down</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘Enter</code></th>
+                    <td>insert line below</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘⇧Enter</code></th>
+                    <td>insert line above</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘/</code></th>
+                    <td>toggle line comment</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌥Z</code></th>
+                    <td>toggle word wrap</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            
+            <section id="vscode-multi-cursor">
+              <h3>## Multi-cursor and selection</h3>
+              <aside>
+                Example usage:<br/>
+                &emsp; Select a variable name, press <code>⌘D</code> three times 
+                to select the next 3 occurrences, and type to rename them all simultaneously.
+              </aside>
+              
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Keybind</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>⌥Click</code></th>
+                    <td>insert multiple cursors</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘⌥Up</code> / <code>Down</code></th>
+                    <td>insert cursor above / below</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘D</code></th>
+                    <td>add selection to next Find match</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘K</code> then <code>⌘D</code></th>
+                    <td>move last selection to next Find match</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘⇧L</code></th>
+                    <td>select all occurrences of current selection</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘U</code></th>
+                    <td>undo last cursor operation</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            
+            <section id="vscode-navigation">
+              <h3>## Navigation</h3>
+              <aside>
+                  Tip: You can use Quick Open (<code>⌘P</code>) with special prefixes to navigate.
+                  Type <code>@</code> to jump to symbols (like functions) in your current file,
+                  or <code>#</code> for symbols across your entire workspace.
+              </aside>
+            
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Keybind</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>⌃G</code></th>
+                    <td>go to line...</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘⇧O</code></th>
+                    <td>go to symbol...</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>F12</code></th>
+                    <td>go to definition</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌥F12</code></th>
+                    <td>peek definition</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘⌥Left</code> / <code>Right</code></th>
+                    <td>go back / forward in file history</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘Up</code> / <code>⌘Down</code></th>
+                    <td>jump to absolute beginning / end of file</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘Right</code> / <code>⌘Left</code></th>
+                    <td>jump to absolute end / beginning of line</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌥Right</code> / <code>⌥Left</code></th>
+                    <td>move forward / backward by word</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            
+            <section id="vscode-search">
+              <h3>## Search and Replace</h3>
+              <aside>
+                  Tip: Inside the search widget, you can toggle modifiers using keyboard shortcuts:<br/>
+                  Case Sensitivity (<code>⌘⌥C</code>), Whole Word (<code>⌘⌥W</code>), 
+                  and Regular Expressions (<code>⌘⌥R</code>).
+              </aside>
+            
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Keybind</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>⌘F</code></th>
+                    <td>find in current file</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘⌥F</code></th>
+                    <td>replace in current file</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘G</code> / <code>⌘⇧G</code></th>
+                    <td>find next / find previous</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘⇧F</code></th>
+                    <td>search across all files in workspace</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘⇧H</code></th>
+                    <td>replace across all files in workspace</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            
+            <section id="vscode-window-management">
+              <h3>## Window Management</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Keybind</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>⌘B</code></th>
+                    <td>toggle sidebar visibility</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘J</code></th>
+                    <td>toggle bottom panel visibility (terminal, output, etc.)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘\</code></th>
+                    <td>split editor side-by-side</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>⌘1</code> / <code>⌘2</code> / <code>⌘3</code></th>
+                    <td>focus into 1st, 2nd, or 3rd editor group</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+        </section>
+
+        <section id="maths">
+            <h2># Maths</h2>
+
+            <a href="https://cs229.stanford.edu/section/cs229-linalg.pdf">linear algebra reference pdf</a>
+
+            <br/><br/>
+            
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fNk_zzaMoSs?si=5Uox47ivyviIupPo" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    </article>
+    
+    <!-- Footer -->
+    <footer class="container centered">
+        <span>
+            <a href="mailto:edomer@student.elte.hu" target="_blank">edomer@student.elte.hu</a>
+            <a href="https://www.linkedin.com/in/ed%C3%B6m%C3%A9r-nagy-3304b33b5/" target="_blank">linkedin</a>
+            <a href="https://github.com/edxmer" target="_blank">github</a>
+        </span>
+        <span>copyright © <span id="current-year"></span></span>
+    </footer>
+
+    <!--Scripts-->
+    <script src="js/theme.js"></script>
+    <script src="js/dynamically-updated-fields.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/back-to-top.js"></script>
+</body>
+</html>

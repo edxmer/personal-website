@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>~/projects Edömér's Archive</title>
+    <link rel="icon" type="image/x-icon" href="media/favicon.ico" />
+</head>
+
+<body class="centered">
+    
+    <!-- Jump to content -->
+    <a id="jump-to-content" href="#content">Jump to content</a>
+
+    <!-- Search -->
+    <dialog id="search-modal">
+        <input type="text" id="search-input" placeholder="Search the archive..." autocomplete="off" />
+        <ul id="search-results"></ul>
+    </dialog>
+
+    <!-- Floating back to top button -->
+    <button id="back-to-top" onclick="window.location.href='#'">Back to top</button>
+
+    <!-- Header -->
+    <header class="container centered">
+        <h1>Edömér's Archive</h1>
+        <p id="path">~/projects</p>
+        <div id="navbar">
+            <button id="search-button" class="centered-vertically" onclick="openSearch()">
+                
+                <!-- Search icon -->
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round" data-darkreader-inline-stroke="" 
+                    style="--darkreader-inline-stroke: currentColor;"><circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+
+                <span id="search-shortcut-text"></span>
+                
+            </button>
+    
+            <nav id="pages" class="button-choice centered-vertically">
+                <button onclick="window.location.href='index.html'">Main</button>
+                <button class="active" onclick="window.location.href='projects.html'">Projects</button>
+                <button onclick="window.location.href='cheat-sheets.html'">Cheat sheets</button>
+                <button onclick="window.location.href='resources.html'">Resources</button>
+            </nav>
+    
+            <div id="theme-mode-selector" class="button-choice centered-vertically">
+                <button id="light-mode-button" class="active" onclick="switchToLightMode()">light</button>
+                <button id="dark-mode-button" onclick="switchToDarkMode()">dark</button>
+            </div>
+    
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <article class="container" id="content">
+
+        <div class="centered">    
+            <nav class="button-choice" id="vertical-navbar">
+                <button onclick="window.location.href='#minigrad'">minigrad</button>
+                <button onclick="window.location.href='#goons'">goons game</button>
+                <button onclick="window.location.href='#structogram-viewer'">structogram viewer</button>
+                <button onclick="window.location.href='#character-level-language-model'">character-level language model</button>
+                <button onclick="window.location.href='#competitive-programming'">competitive programming</button>
+                <button onclick="window.location.href='#this-website'">this website</button>
+            </nav>
+        </div><br/>
+        
+        <section>
+            <h2 id="where-to-find-them"># Where to find them</h2>
+            <p>Most of my projects are available on my <a href="https://github.com/edxmer" target="_blank">github</a></p>
+            <figure>
+                <a href="https://github.com/edxmer" target="_blank">
+                    <img src="media/github-projects.png" alt="Photo of my github projects" />
+                </a>
+                <figcaption>picture of my github, as of 2026 may</figcaption>
+            </figure>
+            
+        </section>
+
+        <section id="minigrad">
+            <h2><a href="https://github.com/edxmer/minigrad" target="_blank"># Minigrad</a></h2>
+            <span class="highlight">python</span> <br /> <br />
+            <p>This is an automatic gradient descent engine I've made in pure python.</p>
+            <p>
+                It works by noting down every calculation that happens between the parameters,
+                then when we finally calculate the loss function, it goes back on the
+                calculations, and by using the chain rule of calculus, it gets the gradient of 
+                every parameter (weight) in respect to the loss function.
+            </p>
+            <p>
+                This, being done in pure python, is obviously not very efficient,
+                but I've learned a lot from this project.
+            </p>
+        </section>
+
+        <section id="goons">
+            <h2><a href="https://github.com/edxmer/goons-game" target="_blank"># Goons game</a></h2>
+            <span class="highlight">GameMaker studio</span>
+            <span class="highlight">goon</span> <br /> <br />
+                
+            <p>
+                <i>Its about goon, its about gooner, we stay goony, we goououer, put in the goons, put in the gour and take what's gours...</i><br />
+                - Dwayne the Goon Johnson
+            </p> <br />
+
+            <p>This is a game currenty under development by me and my friend <a href="https://github.com/krubenh" target="_blank">Roland</a>.</p>
+
+            <p>It was originally made for a game jam, but then we just continued working on it. It's been in development since January 2026.</p>
+
+            <figure>
+                <a href="media/goons-1.png" target="_blank">
+                    <img src="media/goons-1.png" alt="A picture of the game, with the Primordeal goon being in the middle, and goons around it talking." />
+                </a>
+                <figcaption>figure 1 of goons</figcaption>
+            </figure>
+
+            <p>We plan on releasing it on Steam in the summer, so be ready gooners</p>
+
+            <figure>
+                <a href="media/goons-2.png" target="_blank">
+                    <img src="media/goons-2.png" alt="A picture of the game, in goon edit mode." />
+                </a>
+                <figcaption>figure 2 of goons</figcaption>
+            </figure>
+        </section>
+
+        <section id="structogram-viewer">
+            <h2><a href="https://github.com/edxmer/structogram-viewer" target="_blank"># Structogram viewer</a></h2>
+            <span class="highlight">python</span>
+            <span class="highlight">html/js/css</span> <br/> <br/>
+            <p>
+                I was trying to find simple, fast, and good looking structogram viewers for
+                my <b>Algorithms and Data structures</b> class, but I did not like any them. 
+                Thus, I created my own.
+            </p>
+
+            <p>
+                To use it, you need to create a <b>.stuki</b> file that you will be writing pseudo code in,
+                then call the python script with this file as it's argument.
+            </p>
+
+            <p>It then takes this file, and displays a structogram such as this:</p>    
+            
+            <figure>
+                <a href="media/structogram-1.gif" target="_blank">
+                    <img src="media/structogram-1.gif" alt="A demonstration GIF of opening up the structogram viewer"/>
+                </a>
+                <figcaption>figure 1 of structogram viewer</figcaption>
+            </figure>
+
+            <p>And every time you update the file, the viewer updates automatically:</p>
+
+            <figure>
+                <a href="media/structogram-2.gif" target="_blank">
+                    <img src="media/structogram-2.gif" alt="A demonstration GIF of the viewer updating when you save"/>
+                </a>
+                <figcaption>figure 2 of structogram viewer</figcaption>
+            </figure>
+
+            <aside>
+                Note: You need to install the pywebview python module. <br/>
+                You can do this with the following command:<br/>
+                <code>python3 -m pip install pywebview</code>
+                <button id="copy1" class="copy" onclick="copy1()">copy</button>
+            </aside>            
+        </section>
+
+        <section id="character-level-language-model">
+            <h2><a href="https://github.com/edxmer/character-language-model" target="_blank"># Character-level language model</a></h2>
+            <span class="highlight">python</span>
+            <span class="highlight">pytorch</span> <br/> <br/>
+            
+            <p>A bigram, and trigram language model implemented in python.</p>
+
+            <p>
+                They were implemented with the help of the pytorch engine,
+                since it is so much faster than my own (since it is written
+                mainly in c/c++, duhh).
+            </p>
+
+            <p>
+                I also want to implement a n-gram model, and I've started working on it,
+                but it is on hold currently until I mostly finish my exam period.
+            </p>
+        </section>
+
+        <section id="competitive-programming">
+            <h2># Competitive programming</h2>
+            <span class="highlight">c++</span> <br/> <br/>
+
+            <p>
+                During my winter break, I've started trying to improve my problem solving
+                and algorithm creating skills by doing the CSES problem set. 
+                It's a collection of algorithmic programming problems.
+                I want to complete them all, then go on to leetcode/codeforces
+                (well, I will probably start doing those during this, but still)
+            </p>
+
+            <p>
+                I'm using c++ to solve these problems, and I've solved, as of writing this, 56/400 problems. 
+                Most are quite challenging, but I'm enjoying them. Well, until a problem fucks me over
+                for a few days, but the feeling of immense relief and joy when completing these problems
+                is hard to describe in words.
+            </p>
+            
+            <p>This project is also currently on hold until I finish my exams.</p>
+            
+            <a href="https://github.com/edxmer/cses-problems" target="_blank">my current solutions to the cses problemset</a>
+        </section>
+
+        <section id="this-website">
+            <h2># This website</h2>
+            <p>The source code for this website is also available on my <a href="https://github.com/edxmer/personal-website">github</a>.</p>
+            <p>This website was originally made for my web development class.</p>
+        </section>
+    </article>
+
+    <!-- Footer -->
+    <footer class="container centered">
+        <span>
+            <a href="mailto:edomer@student.elte.hu" target="_blank">edomer@student.elte.hu</a>
+            <a href="https://www.linkedin.com/in/ed%C3%B6m%C3%A9r-nagy-3304b33b5/" target="_blank">linkedin</a>
+            <a href="https://github.com/edxmer" target="_blank">github</a>
+        </span>
+        <span>copyright © <span id="current-year"></span></span>
+    </footer>
+
+    <!--Scripts-->
+    <script src="js/theme.js"></script>
+    <script src="js/dynamically-updated-fields.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/back-to-top.js"></script>
+</body>
+</html>

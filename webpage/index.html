@@ -1,62 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>~ Edömér's Archive</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>~/ Edömér's Archive</title>
+    <link rel="icon" type="image/x-icon" href="media/favicon.ico" />
 </head>
+
 <body class="centered">
 
-
+    <!-- Jump to content -->
     <a id="jump-to-content" href="#content">Jump to content</a>
 
+    <!-- Search -->
+    <dialog id="search-modal">
+        <input type="text" id="search-input" placeholder="Search the archive..." autocomplete="off" />
+        <ul id="search-results"></ul>
+    </dialog>
 
-    <header>
-        <div class="container centered">
-            <h1>Edömér's Archive</h1>
-            <p id="path">~</p>
-            <div class="centered-vertically">
-                <button id="search-button" class="centered-vertically">
-                    
-                    <span></span>
-                    <span></span>
-                    <!-- Search icon -->
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: currentColor;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    
-                    
-                </button>
+    <!-- Floating back to top button -->
+    <button id="back-to-top" onclick="window.location.href='#'">Back to top</button>
 
-                <nav class="button-choice centered-vertically">
-                    <button class="active">Main</button>
-                    <button>Projects</button>
-                    <button>Cheat sheets</button>
-                    <button>Resources</button>
-                </nav>
+    <!-- Header -->
+    <header class="container centered">
+        <h1>Edömér's Archive</h1>
+        <p id="path">~</p>
+        <div id="navbar">
+            <button id="search-button" class="centered-vertically" onclick="openSearch()">
+                
+                <!-- Search icon -->
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round" data-darkreader-inline-stroke="" 
+                    style="--darkreader-inline-stroke: currentColor;"><circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
 
-                <div id="theme-mode-selector" class="button-choice centered-vertically">
-                    <button class="active">light</button>
-                    <button>dark</button>
-                </div>
-
+                <span id="search-shortcut-text"></span>
+                
+            </button>
+    
+            <nav id="pages" class="button-choice centered-vertically">
+                <button class="active">Main</button>
+                <button onclick="window.location.href='projects.html'">Projects</button>
+                <button onclick="window.location.href='cheat-sheets.html'">Cheat sheets</button>
+                <button onclick="window.location.href='resources.html'">Resources</button>
+            </nav>
+    
+            <div id="theme-mode-selector" class="button-choice centered-vertically">
+                <button id="light-mode-button" class="active" onclick="switchToLightMode()">light</button>
+                <button id="dark-mode-button" onclick="switchToDarkMode()">dark</button>
             </div>
+    
         </div>
     </header>
-    <br>
-    <article class="container" id="content">
-        <section>
-            <h2># About me</h1>
-            <p>2nd semester student at ELTE IK</p>
 
-            <h3>## Interests</h3>
-            
+    <!-- Main content -->
+    <article class="container" id="content">
+        <section id="about-me">
+            <h2># About me</h2>
+            <p>Hello!</p>
+            <p>I'm a Hungarian 2nd semester student at ELTE's faculty of informatics.</p>
         </section>
 
-        <section>
-            
+        <section id="interests">
+            <h3>## Interests</h3>
+            <ul>
+                <li>doing interesting projects</li>
+                <li>solving interesting problems</li>
+                <li>reading</li>
+                <li>AI</li>
+                <li>healthcare</li>
+                <li>robotics</li>
+                <li>automation</li>
+                <li>game dev</li>
+            </ul>
+        </section>
+
+        <section id="spoken-languages">
+            <h3>## Languages</h3>
+            <p>I fluently speak Hungarian and English.<br>
+            I'm currently learning German and Japanese.</p>
+        </section>
+
+        <section id="programming-languages">
+            <h3>## Favourite programming languages</h3>
+            <span class="highlight">python</span>
+            <span class="highlight">c</span>
+            <span class="highlight">c++</span>
+            <span class="highlight">c#</span>
+            <span class="highlight">html/css/js</span>
+            <span class="highlight">java</span>
         </section>
     </article>
 
+    <!-- Footer -->
+    <footer class="container centered">
+        <span>
+            <a href="mailto:edomer@student.elte.hu" target="_blank">edomer@student.elte.hu</a>
+            <a href="https://www.linkedin.com/in/ed%C3%B6m%C3%A9r-nagy-3304b33b5/" target="_blank">linkedin</a>
+            <a href="https://github.com/edxmer" target="_blank">github</a>
+        </span>
+        <span>copyright © <span id="current-year"></span></span>
+    </footer>
 
+    <!--Scripts-->
+    <script src="js/theme.js"></script>
+    <script src="js/dynamically-updated-fields.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/back-to-top.js"></script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+
+/* default: light mode (Catppuccin Latte) */
+:root {
+  --text: #4c4f69;
+  --subtext: #6c6f85;
+  --surface2: #acb0be;
+  --surface1: #bcc0cc;
+  --surface0: #ccd0da;
+  --base: #eff1f5;
+  --crust: #dce0e8;
+  --border: #5c5f77;
+  --accent: #dc8a78;
+  --distortion: rgba(255, 255, 255, 0.5);
+}
+
+/* dark mode (Catppuccin Mocha) */
+body.dark {
+  --text: #cdd6f4;
+  --subtext: #bac2de;
+  --surface2: #585b70;
+  --surface1: #45475a;
+  --surface0: #313244;
+  --base: #1e1e2e;
+  --crust: #11111b;
+  --border: #b8c0e0;
+  --accent: #f4dbd6;
+  --distortion: rgba(0, 0, 0, 0.5);
+}

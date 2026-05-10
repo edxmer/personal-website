@@ -1,0 +1,107 @@
+
+/* Settings for the button in the header */
+button#search-button {
+    background-color: var(--base);
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0;
+    padding-left: 0.5em;
+    border: 2px solid var(--border);
+    width: 11.5rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    
+}
+button#search-button:hover {
+    background-color: var(--surface0);
+    cursor: pointer;
+}
+
+button#search-button svg {
+    stroke: var(--text);
+    fill: none;
+}
+
+button#search-button span {
+    color: var(--subtext);
+    font-size: 0.75rem;
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+
+/* Style settings for the search modal */
+#search-modal {
+    margin-top: 15vh;
+    width: 90%;
+    max-width: 40em;
+    background-color: var(--base);
+    border: 2px solid var(--border);
+    border-radius: 1em;
+    padding: 0;
+    color: var(--text);
+    box-shadow: 0 10px 30px #1111;
+
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#search-modal::backdrop {
+    background: #0000;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.2s ease, -webkit-backdrop-filter 0.2s ease;
+}
+
+#search-modal.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+#search-modal.visible::backdrop {
+    background-color: var(--distortion);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+#search-input {
+    width: 100%;
+    padding: 20px;
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#search-results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#search-results li a {
+    display: block;
+    padding: 0.9em 1.5em;
+    text-decoration: none;
+    color: inherit;
+    border-top: 2px dashed var(--border);
+}
+
+#search-results li:first-of-type a { border-top: 2px solid var(--border); }
+
+#search-results li a:hover { background-color: var(--surface0); }
+#search-results li a.selected { background-color: var(--surface1); }
+#search-results li a.selected:hover { background-color: var(--surface2); }
+
+#search-results li span {
+    display: block;
+    padding: 0.9em 1.5em;
+    text-decoration: none;
+    color: var(--accent);
+    border-top: 2px solid var(--border);
+}

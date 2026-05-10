@@ -1,0 +1,12 @@
+/* Imports and declarations */
+@import url("color-styles.css"); /* Color variable declarations */
+@import url("fonts.css"); /* Font imports and definitions */
+
+/* Style settings */
+@import url("basic-settings.css"); /* Basic style settings */
+@import url("button-choice.css"); /* .button-choice */
+@import url("search.css"); /* search style settings */
+@import url("responsivity.css"); /* make the page responsive */
+@import url("print.css"); /* the print layout */
+@import url("back-to-top.css"); /* the back to top button */
+@import url("forms.css"); /* forms */

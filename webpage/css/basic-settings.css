@@ -1,0 +1,160 @@
+
+html {
+    scroll-behavior: smooth; 
+}
+
+/**** Basic settings ****/
+body {
+    font-family: 'RobotoMono', sans-serif;
+    background-color: var(--crust);
+    border-color: var(--border);
+    color: var(--text);
+    font-size: 1rem;
+    transition: none;
+}
+body.transition { transition: background-color 0.3s, color 0.6s, border-color 0.6s; }
+/* the theme.js script will add this to the body after 20ms, so that the screen wont flicker
+   white for a second */
+
+h1, h2, h3, h4 {
+    font-family: 'LibertinusMono', monospace;
+    margin: 0;
+    margin-top: 2.5rem;
+    margin-bottom: 0.5em;
+}
+
+article section:first-of-type :is(h1, h2, h3, h4), header h1 {
+    margin-top: 0em;
+}
+
+aside {
+    margin-left: 0.5em;
+    border-left: 2px solid var(--accent);
+    padding-left: 1em;
+}
+
+
+img {
+    width: 100%;
+    border-radius: 0.8em;
+}
+figure figcaption {
+    color: var(--surface2);
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+a:link, a:visited {
+    color: inherit;
+}
+a:hover, a:active {
+    color: var(--accent)
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1;
+    background-color: var(--accent);
+    border: none;
+    color: var(--crust);
+}
+
+button.copy {
+    border-radius: 0.5em;
+}
+
+.highlight {
+    font-size: 0.8em;
+    border: 3px solid var(--accent);
+    border-radius: 1em;
+    padding:0px 1em;
+    padding-bottom: 2px;
+    line-height: 2.2rem;
+    white-space: nowrap;
+}
+
+code {
+    background-color: color-mix(in srgb, var(--accent), transparent 90%);
+    padding: 0 0.5em;
+    padding-bottom: 0.1em;
+    border-radius: 0.5em;
+    white-space: nowrap;
+    
+}
+
+
+
+
+p {
+    margin: 0;
+    margin-bottom: 0.75em;
+}
+
+/**** Centerings ****/
+.centered {
+    display: grid;
+    place-items: center;
+}
+
+.centered-vertically {
+  display: flex;
+  align-items: center;
+}
+
+/**** Jump to content ****/
+a#jump-to-content {
+    position: absolute;
+    top: 10px;
+    left: -200px;
+}
+a#jump-to-content:focus {
+    size:10px;
+    left: 10px;
+}
+
+
+/**** .container ****/
+.container {
+    background-color: var(--base);
+    padding: 1em;
+    border: 2px solid var(--border);
+    border-radius: 1em;
+    width: 90%;
+    max-width: 50rem;
+    min-width: 19rem;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+.container:first-of-type { margin-top:0; }
+.container ~ .container { margin-top: 1rem; }
+
+
+
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.9em;
+  width: 100%;
+}
+
+thead {
+    border-bottom: 2px solid var(--border);
+}
+
+thead tr {
+  text-align: left;
+  font-weight: bold;
+}
+
+th,td {
+  padding: 1em 1.2em;
+}
+
+tbody tr {
+  border-bottom: 1px dashed var(--border);
+}
+
+tbody tr:hover {
+  background-color: var(--surcace2);
+}

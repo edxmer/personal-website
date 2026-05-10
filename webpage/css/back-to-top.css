@@ -1,0 +1,23 @@
+#back-to-top {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    bottom: 1.5em;
+    right: 1.5em;
+    z-index: 99;
+    font-family: inherit;
+    background-color: var(--surface0);
+    color: var(--text);
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+
+#back-to-top:hover {
+    background-color: var(--surface1);
+}
+
+#back-to-top.show {
+    display: block;
+    opacity: 1;
+}
+

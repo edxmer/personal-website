@@ -1,0 +1,81 @@
+/* default layout */
+#navbar {
+    display: grid;
+    grid-template-areas: "search pages theme";
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+#search-button { grid-area: search; }
+#pages { grid-area: pages; }
+#theme-mode-selector { grid-area: theme; }
+
+/* tablet layout */
+@media (max-width: 900px) {
+    #navbar {
+        grid-template-areas: 
+        "pages pages"
+        "search theme";
+        row-gap: 0.5em;
+        column-gap: 1.25em;
+    }
+
+    #search-button { justify-self: end; }
+    #theme-mode-selector { justify-self: start; }
+
+    #pages { justify-self: center; }
+}
+
+/* mobile layout */
+@media (max-width: 465px) {
+    #navbar {
+        grid-template-areas: 
+        "pages"
+        "theme"
+        "search";
+        row-gap: 0.5em;
+        column-gap: 1.25em;
+    }
+
+    #search-button { justify-self: center; }
+    #theme-mode-selector { justify-self: center; }
+    #pages { justify-self: center; }
+
+    /* overriding settings for button-choice.css */
+    #pages {
+        width: 18rem;
+    }
+    .button-choice {
+        height: 2.5rem;
+    }
+    .button-choice button {
+
+        padding-left: auto;
+        padding-right: auto;
+        
+    }
+    #theme-mode-selector {
+        width: 18rem;
+        height: 1.5rem;
+    }
+    #theme-mode-selector button {
+        width: 9rem;
+    }
+
+    button#search-button {
+        width: 18rem;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    body {
+        font-size: 0.8rem;
+    }
+
+    #vim-keybinds-nav button {
+        font-size: 0.7em;
+    }
+}

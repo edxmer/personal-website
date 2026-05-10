@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>~/resources Edömér's Archive</title>
+    <link rel="icon" type="image/x-icon" href="media/favicon.ico" />
+</head>
+
+<body class="centered">
+
+    <!-- Jump to content -->
+    <a id="jump-to-content" href="#content">Jump to content</a>
+
+    <!-- Search -->
+    <dialog id="search-modal">
+        <input type="text" id="search-input" placeholder="Search the archive..." autocomplete="off" />
+        <ul id="search-results"></ul>
+    </dialog>
+
+    <!-- Floating back to top button -->
+    <button id="back-to-top" onclick="window.location.href='#'">Back to top</button>
+
+    <!-- Header -->
+    <header class="container centered">
+        <h1>Edömér's Archive</h1>
+        <p id="path">~/resources</p>
+        <div id="navbar">
+            <button id="search-button" class="centered-vertically" onclick="openSearch()">
+                
+                <!-- Search icon -->
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round" data-darkreader-inline-stroke="" 
+                    style="--darkreader-inline-stroke: currentColor;"><circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+
+                <span id="search-shortcut-text"></span>
+                
+            </button>
+    
+            <nav id="pages" class="button-choice centered-vertically">
+                <button onclick="window.location.href='index.html'">Main</button>
+                <button onclick="window.location.href='projects.html'">Projects</button>
+                <button onclick="window.location.href='cheat-sheets.html'">Cheat sheets</button>
+                <button class="active">Resources</button>
+            </nav>
+    
+            <div id="theme-mode-selector" class="button-choice centered-vertically">
+                <button id="light-mode-button" class="active" onclick="switchToLightMode()">light</button>
+                <button id="dark-mode-button" onclick="switchToDarkMode()">dark</button>
+            </div>
+    
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <article class="container" id="content">
+        <section id="elte">
+            <h2># ELTE</h2>
+            <ul>
+                <li><a href="https://canvas.elte.hu/belepes/">canvas</a></li>
+                <li><a href="https://tms.inf.elte.hu/">tms</a></li>
+                <li><a href="https://fulepdani.web.elte.hu">Dániel Fülep's page</a></li>
+                <li><a href="https://www.inf.elte.hu/kisokos-gyujtemeny">kisokosok</a></li>
+            </ul>
+        </section>
+
+        <section id="study">
+            <h2># Study</h2>
+            <ul>
+                <li><a href="https://keep.google.com">Google Keep</a></li>
+                <li><a href="https://notebooklm.google.com">Google NotebookLM</a></li>
+                <li>Pomodoro timers (like <a href="https://github.com/ivoronin/TomatoBar">tomatobar</a>)</li>
+            </ul>
+        </section>
+
+        <section id="AI">
+            <h2># AI</h2>
+            <ul>
+                <li><a href="https://gemini.google.com/app">Gemini</a></li>
+                <li><a href="https://claude.ai/new">Claude</a></li>
+                <li><a href="https://chatgpt.com">ChatGPT</a></li>
+            </ul>
+        </section>
+
+        <section id="free-stuff">
+            <h2># Free stuff</h2>
+            <a href="https://fmhy.net">freemediaheckyeah</a>
+        </section>
+
+        <section id="configs">
+            <h2># Configs</h2>
+            <a href="https://github.com/edxmer/configs">github.com/edxmer/configs</a>
+        </section>
+
+        <section id="web-dev">
+            <h2># Web dev</h2>
+            <ul>
+                <li><a href="https://www.theodinproject.com">The Odin Project</a></li>
+                <li><a href="https://fullstackopen.com/en/">Full Stack Open</a></li>
+                <li><a href="https://colortopia.vercel.app/generator">Tailwind Gradient Generator</a></li>
+                <li><a href="https://uiverse.io">UIverse</a></li>
+                <li><a href="https://app.haikei.app">Haikei</a></li>
+                <li><a href="https://fonts.google.com">Google Fonts</a></li>
+            </ul>
+        </section>
+
+        <section id="color-themes">
+            <h2># Color themes</h2>
+            <ul>
+                <li><a href="https://catppuccin.com/palette/">Catppuccin</a></li>
+                <li><a href="https://rosepinetheme.com/themes/">Rosé Pine</a></li>
+            </ul>
+        </section>
+
+        <!--<section id="send-in-resource">
+            <h2># Have a good resource? Send it in!</h2>
+            
+            <form>
+                <fieldset>
+                    <legend>Your info</legend>
+                    
+                    <label for="name">Your name</label> <br/>
+                    <input type="text" id="name"/> <br/>
+                    <label for="email">Your email</label> <br/>
+                    <input type="email" id="email"/> <br/>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>The resource</legend>
+                    <label for="name">Resource name / url</label> <br/>
+                    <input type="text" id="name"> <br/>
+                    <label for="usefulness">Description</label><br/>
+                    <textarea id="usefulness" name="usefulness" rows="4" cols="25" ></textarea><br/>
+                </fieldset>
+                
+                
+                <fieldset>
+                    <legend>Resource type</legend>
+
+                    <span class="radio-group">
+                        <input type="radio" id="type-elte" name="type" value="elte"/>
+                        <label for="type-elte">ELTE</label>
+                    </span>
+                    
+                    <span class="radio-group">
+                        <input type="radio" id="type-study" name="type" value="study"/>
+                        <label for="type-study">Study</label>
+                    </span>
+                    
+                    <span class="radio-group">
+                        <input type="radio" id="type-ai" name="type" value="ai"/>
+                        <label for="type-ai">AI</label>
+                    </span>
+                    
+                    <span class="radio-group">
+                        <input type="radio" id="type-free-stuff" name="type" value="free-stuff"/>
+                        <label for="type-free-stuff">Free stuff</label>
+                    </span>
+                    
+                    <span class="radio-group">
+                        <input type="radio" id="type-configs" name="type" value="configs"/>
+                        <label for="type-configs">Configs</label>
+                    </span>
+                    
+                    <span class="radio-group">
+                        <input type="radio" id="type-web-dev" name="type" value="web-dev"/>
+                        <label for="type-web-dev">Web dev</label>
+                    </span>
+                    
+                    <span class="radio-group">
+                        <input type="radio" id="type-color-themes" name="type" value="color-themes"/>
+                        <label for="type-color-themes">Color themes</label>
+                    </span>
+                    
+                    <span class="radio-group">
+                        <input type="radio" id="type-other" name="type" value="other"/>
+                        <label for="type-other">Other</label>
+                    </span>
+                    
+                </fieldset>
+                
+                <fieldset id="preference-fieldset">
+                    <legend>Preference</legend>
+                    
+                    <input type="checkbox" id="use-name" name="use-name"> 
+                    <label for="use-name">
+                        Do you want your name displayed on my page if I add this resource?
+                    </label>
+
+                    <br/><br/>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Clear">
+                </fieldset>
+            </form>
+        </section>-->
+        
+    </article>
+
+    <!-- Footer -->
+    <footer class="container centered">
+        <span>
+            <a href="mailto:edomer@student.elte.hu" target="_blank">edomer@student.elte.hu</a>
+            <a href="https://www.linkedin.com/in/ed%C3%B6m%C3%A9r-nagy-3304b33b5/" target="_blank">linkedin</a>
+            <a href="https://github.com/edxmer" target="_blank">github</a>
+        </span>
+        <span>copyright © <span id="current-year"></span></span>
+    </footer>
+
+    <!--Scripts-->
+    <script src="js/theme.js"></script>
+    <script src="js/dynamically-updated-fields.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/back-to-top.js"></script>
+</body>
+</html>

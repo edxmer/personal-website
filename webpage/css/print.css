@@ -1,0 +1,14 @@
+@media print {
+  #navbar, footer { 
+      display: none !important;
+  }
+  
+  body { 
+      font-size: 12pt; 
+      color: black; 
+      background-color: white;
+      border: none !important;
+      outline: none !important;
+      --accent: black !important;
+  }
+}

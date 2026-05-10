@@ -1,0 +1,29 @@
+
+form :is(input, textarea) {
+    background-color: var(--surface2);
+    border: none;
+    color: var(--text);
+    font-size: 1em;
+    padding: 0.5em;
+    font-family: inherit;
+    border-radius: 0.5em;
+    max-width: 100%;
+    margin: 0.2em;
+}
+
+form :is(input[type=text], input[type=email]) {
+    width: 20em;
+}
+
+form fieldset {
+    border-radius: 0.5em;
+}
+
+#preference-fieldset {
+    background-image: url("../media/light-background.avif");
+    background-size: 100%;
+}
+
+body.dark #preference-fieldset {
+    background-image: url("../media/dark-background.avif");
+}
