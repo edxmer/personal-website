@@ -77,7 +77,7 @@
 
 
 ## Search and Replace
-> Tip: Inside the search widget, you can toggle modifiers using keyboard shortcuts: Case Sensitivity (`⌘⌥C`), Whole Word (`⌘⌥W`), and Regular Expressions (`⌘⌥R`).
+> Tip: Inside the search widget, you can tog0gle modifiers using keyboard shortcuts: Case Sensitivity (`⌘⌥C`), Whole Word (`⌘⌥W`), and Regular Expressions (`⌘⌥R`).
 
 | Keybind | Action |
 | - | - |

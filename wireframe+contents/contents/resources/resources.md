@@ -41,13 +41,8 @@
 ### Configs
 > [**github.com/edxmer/configs**](https://github.com/edxmer/configs)
 ### Web dev
-- [The Odin Project](https://www.theodinproject.com)
-- [Full Stack Open](https://fullstackopen.com/en/)
-- [Tailwind Gradient Generator](https://colortopia.vercel.app/generator)
-- [UIverse](https://uiverse.io)
-- [Haikei](https://app.haikei.app)
-- [Google Fonts](https://fonts.google.com)
+h
 ### Color Themes
-- [Rosé Pine](https://rosepinetheme.com/themes/)
 - [Catppuccin](https://catppuccin.com/palette/)
+- [Rosé Pine](https://rosepinetheme.com/themes/)
 ### Have a good resource you want to send in? [click here](send_in.md)

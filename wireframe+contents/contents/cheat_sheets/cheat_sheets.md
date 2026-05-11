@@ -8,7 +8,7 @@
 - [Resources](../resources/resources.md)
 <!-- /nav -->
 
-## Cheat Sheetsx
+## Cheat Sheets
 1. [terminal](terminal.md)
 2. [vim](vim.md)
 3. [vscode](vscode.md)
