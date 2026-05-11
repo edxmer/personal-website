@@ -1,0 +1,27 @@
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.9em;
+  width: 100%;
+}
+
+thead {
+    border-bottom: 2px solid var(--border);
+}
+
+thead tr {
+  text-align: left;
+  font-weight: bold;
+}
+
+th,td {
+  padding: 1em 1.2em;
+}
+
+tbody tr {
+  border-bottom: 1px dashed var(--border);
+}
+
+tbody tr:hover {
+  background-color: var(--surcace2);
+}
