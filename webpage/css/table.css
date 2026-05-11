@@ -25,3 +25,7 @@ tbody tr {
 tbody tr:hover {
   background-color: var(--surcace2);
 }
+
+table caption {
+    color: var(--subtext);
+}
