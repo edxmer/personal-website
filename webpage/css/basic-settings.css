@@ -23,6 +23,13 @@ h1, h2, h3, h4 {
     margin-bottom: 0.5em;
 }
 
+.article-h {
+    margin-top: 0em;
+    color: var(--subtext);
+    font-size: 1.5em;
+    
+}
+
 article section:first-of-type :is(h1, h2, h3, h4), header h1 {
     margin-top: 0em;
 }
@@ -44,9 +51,14 @@ figure figcaption {
     font-size: 0.9em;
 }
 
-a:link, a:visited {
+a:link {
     color: inherit;
 }
+
+a:visited {
+    color: var(--subtext);
+}
+
 a:hover, a:active {
     color: var(--accent)
 }
@@ -109,7 +121,6 @@ a#jump-to-content {
     left: -200px;
 }
 a#jump-to-content:focus {
-    size:10px;
     left: 10px;
 }
 
@@ -128,3 +139,17 @@ a#jump-to-content:focus {
 }
 .container:first-of-type { margin-top:0; }
 .container ~ .container { margin-top: 1rem; }
+
+
+video {
+    width: 70%;
+    border-radius: 1em;
+}
+
+
+.video-transcription {
+    padding: 1.5em;
+    border: 1px solid var(--border);
+    border-radius: 1em;
+    margin-top: 0.75em;
+}

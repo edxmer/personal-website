@@ -49,12 +49,6 @@
     .button-choice {
         height: 2.5rem;
     }
-    .button-choice button {
-
-        padding-left: auto;
-        padding-right: auto;
-        
-    }
     #theme-mode-selector {
         width: 18rem;
         height: 1.5rem;

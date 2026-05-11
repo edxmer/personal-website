@@ -1,14 +1,57 @@
 @media print {
-  #navbar, footer { 
-      display: none !important;
-  }
-  
-  body { 
-      font-size: 12pt; 
-      color: black; 
-      background-color: white;
-      border: none !important;
-      outline: none !important;
-      --accent: black !important;
-  }
+    html, body, .container, main, article {
+        display: block !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .container, main, article {
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+    }
+
+    h1, h2, h3, h4 {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+    }
+
+    nav, #navbar, #path {
+        display: none !important;
+        opacity: 0 !important;
+    }
+
+    .container {
+        border: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        color: black;
+        background-color: white;
+        border: none !important;
+        outline: none !important;
+        --text: black !important;
+        --subtext: #222 !important;
+        --surface2: white !important;
+        --surface1: white !important;
+        --surface0: white !important;
+        --base: white !important;
+        --crust: white !important;
+        --border: #ccc !important;
+        --accent: white !important;
+        --distortion: white !important;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+
+    video {
+        display: none !important;
+    }
+
+    img {
+        width: 67% !important;
+    }
 }

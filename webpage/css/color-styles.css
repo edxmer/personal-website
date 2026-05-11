@@ -26,3 +26,21 @@ body.dark {
   --accent: #f4dbd6;
   --distortion: rgba(0, 0, 0, 0.5);
 }
+
+/* high contarst mode */
+body.contrast {
+  --text: black;
+  --subtext: #222;
+  --surface2: #bbb;
+  --surface1: #ddd;
+  --surface0: #e8e8e8;
+  --base: white;
+  --crust: white;
+  --border: #333;
+  --accent: #555;
+  --distortion: rgba(0, 0, 0, 0.5);
+}
+
+body.contrast #content {
+    font-size: 1.2em !important;
+}

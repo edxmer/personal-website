@@ -6,14 +6,15 @@
     right: 1.5em;
     z-index: 99;
     font-family: inherit;
-    background-color: var(--surface0);
+    background-color: var(--base);
     color: var(--text);
     padding: 0.5em;
     border-radius: 0.5em;
+    border: 1px solid var(--border);
 }
 
 #back-to-top:hover {
-    background-color: var(--surface1);
+    background-color: var(--surface0);
 }
 
 #back-to-top.show {

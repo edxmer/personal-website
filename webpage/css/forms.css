@@ -1,6 +1,6 @@
 
 form :is(input, textarea) {
-    background-color: var(--surface2);
+    background-color: var(--surface0);
     border: none;
     color: var(--text);
     font-size: 1em;
@@ -9,6 +9,7 @@ form :is(input, textarea) {
     border-radius: 0.5em;
     max-width: 100%;
     margin: 0.2em;
+    border: 2px solid var(--border);
 }
 
 form :is(input[type=text], input[type=email]) {
@@ -20,10 +21,11 @@ form fieldset {
 }
 
 #preference-fieldset {
-    background-image: url("../media/light-background.avif");
+    background: url("../media/light-background.avif") no-repeat center;
     background-size: 100%;
 }
 
 body.dark #preference-fieldset {
-    background-image: url("../media/dark-background.avif");
+    background: url("../media/dark-background.avif") no-repeat center;
+    background-size: 100%;
 }
